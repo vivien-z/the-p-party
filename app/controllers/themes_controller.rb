@@ -17,14 +17,14 @@ class ThemesController < ApplicationController
     if @theme.save
       redirect_to theme_path(@theme)
     else
-      render 'theme/show'
+      render 'theme/new'
     end
   end
 
   private
 
   def theme_params
-    params.require(:theme).permit(:name, :description, :price_cent, :rating, :number_people)
+    params.require(:theme).permit(:name, :description, :price_cent, :number_people)
   end
 end
 
