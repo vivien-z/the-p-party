@@ -23,14 +23,18 @@ class ThemesController < ApplicationController
 
   def edit
     @theme = Theme.find(params[:id])
-    @theme.update(params[:theme])
+  end
+
+  def update
+    @theme = Theme.find(params[:id])
+    @theme.update(theme_params)
     redirect_to theme_path(@theme)
   end
 
   def destroy
     @theme = Theme.find(params[:id])
     @theme.destroy
-    redirect_to theme_path(@theme)
+    redirect_to themes_path
   end
 
   private
@@ -39,4 +43,3 @@ class ThemesController < ApplicationController
     params.require(:theme).permit(:name, :description, :price_cent, :number_people)
   end
 end
-
