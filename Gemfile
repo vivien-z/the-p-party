@@ -33,8 +33,8 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'pundit'
 
-# Gemfile (protect file)
-gem 'dotenv-rails', groups: [:development, :test]
+# Gemfile
+gem 'cloudinary', '~> 1.16.0'
 
 group :development, :test do
   gem 'pry-byebug'
