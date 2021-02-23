@@ -21,6 +21,18 @@ class ThemesController < ApplicationController
     end
   end
 
+  def edit
+    @theme = Theme.find(params[:id])
+    @theme.update(params[:theme])
+    redirect_to theme_path(@theme)
+  end
+
+  def destroy
+    @theme = Theme.find(params[:id])
+    @theme.destroy
+    redirect_to theme_path(@theme)
+  end
+
   private
 
   def theme_params
