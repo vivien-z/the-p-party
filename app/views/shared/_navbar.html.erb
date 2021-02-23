@@ -1,5 +1,5 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to themes_path, class: "navbar-brand" do %>
+  <%= link_to root_path, class: "navbar-brand" do %>
     <%= image_tag "https://images.unsplash.com/photo-1526653054275-5a4f37ea1c64?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80", class: "avatar" %>
     <% end %>
 
@@ -12,7 +12,7 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item active">
-          <%= link_to "Home", themes_path, class: "nav-link" %>
+          <%= link_to "All themes", themes_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to "+ theme", new_theme_path, class: "nav-link" %>
