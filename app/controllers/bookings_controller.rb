@@ -1,14 +1,18 @@
 class BookingsController < ApplicationController
   def new
     @booking = Booking.new
+    @theme = Theme.find(params[:theme_id])
   end
 
   def create
     @booking = Booking.new(booking_params)
+    @theme = Theme.find(params[:theme_id])
+    @booking.theme = @theme
     @booking.user = current_user
 
-    if booking.save
-      redirect_to @booking, notice: "Booking was successfully created."
+
+    if @booking.save
+      redirect_to theme_path(@theme), notice: "Booking was successfully created."
     else
       render :new
     end
