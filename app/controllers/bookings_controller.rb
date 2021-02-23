@@ -1,6 +1,5 @@
 class BookingsController < ApplicationController
-<<<<<<< Updated upstream
-=======
+
   def new
     @booking = Booking.new
     @theme = Theme.find(params[:theme_id])
@@ -33,8 +32,8 @@ class BookingsController < ApplicationController
   end
 
   private
+
   def booking_params
     params.require(:booking).permit(:starting_date, :ending_date, :address)
   end
->>>>>>> Stashed changes
 end
