@@ -1,3 +1,11 @@
-<h2><%= @theme.name %></h2>
-<p><%= @theme.price_cent %></p>
-<p><%= @theme.user.email %></p>
+<div class="container p-5">
+  <h2 class="mb-3"><%= @theme.name.capitalize %></h2>
+  <h5>Description:</h5>
+  <p><%= @theme.description %></p>
+  <h5>Price: </h5><p><%= @theme.price_cent %></p>
+  <h5>Contact: </h5>
+  <p><%= @theme.user.email %></p>
+  <p>to be added pundit condition for the following function</p>
+  <%= link_to "Edit", edit_theme_path %>
+  <%= link_to "Delete", theme_path(@theme), method: :delete, data: { confirm: "Are you sure?"} %>
+</div>
