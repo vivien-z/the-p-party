@@ -43,9 +43,9 @@ class ThemesController < ApplicationController
   end
 
   def destroy
-    authorize(@theme)
     @theme = Theme.find(params[:id])
     @theme.destroy
+    authorize(@theme)
     redirect_to themes_path
   end
 
