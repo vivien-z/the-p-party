@@ -15,8 +15,14 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to theme_path(@theme), notice: "Booking was successfully created."
     else
-      render :new
+      render @theme.new
     end
+  end
+
+  def destroy
+     @booking = Booking.find(params[:id])
+     @booking.destroy
+     redirect_to theme_path(@booking.theme_id)
   end
 
   def edit
