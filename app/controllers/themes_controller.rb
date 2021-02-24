@@ -33,6 +33,7 @@ class ThemesController < ApplicationController
 
   def update
     @theme = Theme.find(params[:id])
+    authorize(@theme)
     if @theme.update(theme_params)
       redirect_to theme_path(@theme)
     else
