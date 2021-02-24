@@ -1,5 +1,7 @@
 class Theme < ApplicationRecord
   belongs_to :user
+  has_many_attached :photos
+
   validates :price_cent, :name, presence: true
 
   def price
