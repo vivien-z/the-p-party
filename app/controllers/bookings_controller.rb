@@ -26,9 +26,9 @@ class BookingsController < ApplicationController
   def update
     @booking = Booking.find(params[:id])
     if @booking.update(booking_params)
-      redirect_to theme_path(id: @booking.theme.id), notice: "Booking was successfully update."
+      redirect_to theme_path(@booking.theme.id), notice: "Booking was successfully update."
     else
-      render :new
+      render :edit
     end
   end
 
