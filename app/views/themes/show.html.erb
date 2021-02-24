@@ -1,3 +1,37 @@
-<h2><%= @theme.name %></h2>
-<p><%= @theme.price_cent %></p>
-<p><%= @theme.user.email %></p>
+<div class="container p-5">
+
+  <div class="card-title">
+    <h2 class="mb-3"><%= @theme.name.capitalize %></h2>
+    <p>to be added pundit condition for the following function</p>
+    <%= link_to "Edit", edit_theme_path %>
+    <%= link_to "Delete", theme_path(@theme), method: :delete, data: { confirm: "Are you sure?"} %>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <img src="#" alt=""> <!-- reserved for theme pic-->
+    </div>
+    <div class="card-bottom">
+      <h5>Description:</h5>
+      <p><%= @theme.description %></p>
+      <h5>Price: </h5><p><%= @theme.price_cent.to_f/100 %></p>
+      <h5>Contact: </h5>
+      <p><%= @theme.user.email %></p>
+    </div>
+  </div>
+
+  <div class="card">
+    <%= simple_form_for [@theme, @booking] do |f|%>
+      <%= f.input :starting_date %>
+      <%= f.input :ending_date %>
+      <%= f.input :address %>
+      <%= f.button :submit, class: "btn btn-primary" %>
+    <% end %>
+  </div>
+
+  <div>
+    <h5>Reviews</h5>
+    <!-- new reviews to be added here-->
+  </div>
+</div>
+

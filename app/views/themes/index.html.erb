@@ -1,5 +1,10 @@
-<ul>
-  <% @themes.each do |theme| %>
-    <li><%= theme.name %> <%= theme.price %></li>
-  <% end %>
-</ul>
+<div class="container">
+  <ul>
+    <% @themes.each do |theme| %>
+      <li>
+        <%= link_to "#{theme.name.capitalize}", theme_path(theme) %>
+        <span class="ml-2">$ <%= theme.price %></span>
+      </li>
+    <% end %>
+  </ul>
+</div>
