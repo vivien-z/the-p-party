@@ -16,7 +16,7 @@
         <img src="https://images.unsplash.com/photo-1464047736614-af63643285bf?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=967&q=80" alt="pic">
       <% end %>
     </div>
-    <div class="card-bottom">
+    <div class="card-bottom p-3 mb-3">
       <h5>Description:</h5>
       <p><%= @theme.description %></p>
       <h5>Price: </h5><p><%= @theme.price_cent.to_f/100 %></p>
@@ -25,7 +25,8 @@
     </div>
   </div>
 
-  <div class="card">
+  <div class="card p-3 mb-3">
+    <h5>Book this theme:</h5>
     <%= simple_form_for [@theme, @booking] do |f|%>
       <%= f.input :starting_date %>
       <%= f.input :ending_date %>
