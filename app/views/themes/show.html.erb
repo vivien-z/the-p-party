@@ -8,4 +8,16 @@
   <p>to be added pundit condition for the following function</p>
   <%= link_to "Edit", edit_theme_path %>
   <%= link_to "Delete", theme_path(@theme), method: :delete, data: { confirm: "Are you sure?"} %>
+
+  <h5>Booking:</h5>
+  <ul>
+    <% @theme.bookings.each do |booking| %>
+      <li><p>From:</p><%= booking.starting_date %> - <p>To:</p><%= booking.ending_date %></li>
+      <li><p>Address:</p><%= booking.address %></li>
+      <%= link_to 'Edit', edit_booking_path %>
+      <%= link_to 'Delete', booking_path(booking), method: :delete, data: { confirm: "Are you sure?"} %>
+    <% end %>
+  </ul>
 </div>
+
+
