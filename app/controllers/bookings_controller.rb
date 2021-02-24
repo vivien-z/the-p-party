@@ -1,10 +1,5 @@
 class BookingsController < ApplicationController
 
-  def new
-    @booking = Booking.new
-    @theme = Theme.find(params[:theme_id])
-  end
-
   def create
     @booking = Booking.new(booking_params)
     @theme = Theme.find(params[:theme_id])
