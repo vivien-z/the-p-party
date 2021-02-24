@@ -1,4 +1,38 @@
 <div class="container">
-  <h1><%= current_user.email.capitalize %></h1>
+  <h1>My Profile</h1>
+  <h3>User: <%= @user.email %></h3>
+
+  <div class="card-list">
+    <h5>My themes</h5>
+      <% if @user.themes %>
+        <ul>
+          <% @user.themes.each do |theme| %>
+            <li>
+              <%= link_to "#{theme.name.capitalize}", theme_path(theme) %>
+              <span class="ml-2">$ <%= theme.price %></span>
+              <%= link_to "Edit", edit_theme_path %>
+              <%= link_to "Delete", theme_path(theme), method: :delete, data: { confirm: "Are you sure?"} %>
+            </li>
+          <% end %>
+        </ul>
+      <% else %>
+      <% end %>
+  </div>
+
+  <div class="card-list">
+    <h5>My bookings</h5>
+      <% if @user.bookings %>
+        <ul>
+          <% @user.bookings.each do |booking| %>
+            <li>
+              <!-- to be added -->
+              <!-- edit -->
+              <!-- delete -->
+            </li>
+          <% end %>
+        </ul>
+      <% else %>
+      <% end %>
+  </div>
 
 </div>
