@@ -33,6 +33,8 @@ class ThemesController < ApplicationController
 
   def update
     @theme = Theme.find(params[:id])
+    authorize(@theme)
+
     if @theme.update(theme_params)
       redirect_to theme_path(@theme)
     else
@@ -41,6 +43,7 @@ class ThemesController < ApplicationController
   end
 
   def destroy
+    authorize(@theme)
     @theme = Theme.find(params[:id])
     @theme.destroy
     redirect_to themes_path
