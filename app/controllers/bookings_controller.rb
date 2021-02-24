@@ -19,9 +19,9 @@ class BookingsController < ApplicationController
   end
 
   def destroy
-    @booking = Booking.find(params[:id])
-    @booking.destroy
-    redirect_to theme_path
+     @booking = Booking.find(params[:id])
+     @booking.destroy
+     redirect_to theme_path(id: @booking.theme_id)
   end
 
   private
