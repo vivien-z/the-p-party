@@ -1,10 +1,12 @@
 <div class="container">
-  <ul>
     <% @themes.each do |theme| %>
-      <li>
-        <%= link_to "#{theme.name.capitalize}", theme_path(theme) %>
-        <span class="ml-2">$ <%= theme.price %></span>
-      </li>
-    <% end %>
-  </ul>
-</div>
+    <div class="card-theme">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+  <div class="card-theme-infos">
+    <%= link_to "#{theme.name.capitalize}", theme_path(theme) %>
+    <p><%= theme.description %></p>
+    <p><%= theme.number_people %></p>
+    <p><%= theme.price %></p>
+    <span class="stars"><i class="fas fa-star"></i> <%= theme.rating %></span>
+  </div>
+<% end %>
