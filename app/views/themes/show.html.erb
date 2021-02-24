@@ -9,7 +9,13 @@
 
   <div class="card">
     <div class="card-top">
-      <img src="#" alt=""> <!-- reserved for theme pic-->
+      <% if @theme.photos.attached? %>
+        <% @theme.photos.each do |photo| %>
+          <%= cl_image_tag(photos.key, height: 300, width: 400, crop: :fill) %>
+        <% end %>
+      <% else %>
+        <%= cl_image_tag("party_dqr1in", height: 300, width: 400, crop: :fill) %>
+      <% end %>
     </div>
     <div class="card-bottom">
       <h5>Description:</h5>
