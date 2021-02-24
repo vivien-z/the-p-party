@@ -52,6 +52,6 @@ class ThemesController < ApplicationController
   private
 
   def theme_params
-    params.require(:theme).permit(:name, :description, :price_cent, :number_people, photos: [])
+    params.require(:theme).permit(:name, :description, :address, :price_cent, :number_people, photos: [])
   end
 end

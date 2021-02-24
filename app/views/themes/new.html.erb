@@ -3,6 +3,7 @@
     <%= simple_form_for(@theme) do |f| %>
       <%= f.input :name %>
       <%= f.input :description %>
+      <%= f.input :address %>
       <%= f.input :price_cent %>
       <%= f.input :number_people %>
       <%= f.input :photos, as: :file, input_html: { multiple: true} %>
