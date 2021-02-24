@@ -1,13 +1,13 @@
 <div class="container">
     <% @themes.each do |theme| %>
     <div class="card-theme">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-  <div class="card-theme-infos">
-    <%= link_to "#{theme.name.capitalize}", theme_path(theme) %>
-    <p><%= theme.description %></p>
-    <p><%= theme.address %></p>
-    <p><%= theme.number_people %></p>
-    <p><%= theme.price %></p>
-    <span class="stars"><i class="fas fa-star"></i> <%= theme.rating %></span>
-  </div>
+        <img src="https://images.unsplash.com/photo-1464047736614-af63643285bf?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=967&q=80" alt="pic"/>
+    </div>
+    <div class="card-theme-infos">
+      <%= link_to "#{theme.name.capitalize}", theme_path(theme) %>
+      <p><%= theme.description %></p>
+      <p><%= theme.number_people %></p>
+      <p><%= theme.price %></p>
+      <span class="stars"><i class="fas fa-star"></i> <%= theme.rating %></span>
+    </div>
 <% end %>
