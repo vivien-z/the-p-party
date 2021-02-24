@@ -5,6 +5,7 @@ class ThemesController < ApplicationController
 
   def show
     @theme = Theme.find(params[:id])
+    @booking = Booking.new
     authorize(@theme)
   end
 
@@ -16,7 +17,6 @@ class ThemesController < ApplicationController
   def create
     @theme = Theme.new(theme_params)
     @theme.user = current_user
-
     authorize(@theme)
 
     if @theme.save

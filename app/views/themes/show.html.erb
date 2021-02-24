@@ -20,8 +20,13 @@
     </div>
   </div>
 
-  <div>
-    <!-- new bookings to be added here-->
+  <div class="card">
+    <%= simple_form_for [@theme, @booking] do |f|%>
+      <%= f.input :starting_date %>
+      <%= f.input :ending_date %>
+      <%= f.input :address %>
+      <%= f.button :submit, class: "btn btn-primary" %>
+    <% end %>
   </div>
 
   <div>
