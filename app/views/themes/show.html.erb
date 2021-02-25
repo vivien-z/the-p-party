@@ -2,8 +2,10 @@
   <div class="card-title">
     <h2 class="mb-3"><%= @theme.name.capitalize %></h2>
     <p>to be added pundit condition for the following function</p>
-    <%= link_to "Edit", edit_theme_path %>
-    <%= link_to "Delete", theme_path(@theme), method: :delete, data: { confirm: "Are you sure?"} %>
+    <% if current_user == @theme.user %>
+      <%= link_to "Edit", edit_theme_path %>
+      <%= link_to "Delete", theme_path(@theme), method: :delete, data: { confirm: "Are you sure?"} %>
+    <% end %>
   </div>
 
   <div class="card">
