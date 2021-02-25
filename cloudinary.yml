@@ -1,0 +1,5 @@
+development:
+  cloud_name: "vivienz"
+
+production:
+  cloud_name: "vivienz"
