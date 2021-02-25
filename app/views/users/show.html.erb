@@ -16,8 +16,8 @@
                   <!-- Romuald's card style -->
                   <%= link_to "#{theme.name.capitalize}", theme_path(theme) %>
                   <span class="ml-2">$ <%= theme.price %></span>
-                  <%= link_to "Edit", edit_theme_path %>
-                  <%= link_to "Delete", theme_path(theme,{ redirect_to: user_path(current_user) }),
+                  <%= link_to "Edit", edit_theme_path(theme) %>
+                  <%= link_to "Delete", theme_path(theme, { redirect_to: user_path(current_user) }),
                                method: :delete, data: { confirm: "Are you sure?"} %>
                 </div>
               </div>
@@ -39,8 +39,8 @@
                   <!-- Romuald's card style -->
                   <p>From: <%= booking.starting_date %> - To: <%= booking.ending_date %></p>
                   <p>Address: <%= booking.theme.address %></p>
-                  <p><%= link_to "Edit", edit_booking_path %></p>
-                  <p><%= link_to "Delete", theme_path(booking.theme), method: :delete, data: { confirm: "Are you sure?"} %></p>
+                  <p><%= link_to "Edit", edit_booking_path(booking) %></p>
+                  <p><%= link_to "Delete", booking_path(booking, { redirect_to: user_path(current_user) }), method: :delete, data: { confirm: "Are you sure?"} %></p>
                </div>
               </div>
             </li>

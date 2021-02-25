@@ -42,7 +42,7 @@ class BookingsController < ApplicationController
 
     authorize(@booking)
 
-    redirect_to theme_path(@booking.theme_id)
+    redirect_to user_path(current_user)
   end
 
   private
