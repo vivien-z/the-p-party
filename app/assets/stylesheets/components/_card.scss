@@ -41,10 +41,13 @@ ul {
   padding: 16px;
 }
 
-.card-top {
+.card-left {
   img{
     width: 100%;
+    object-fit: cover;
   }
+}
 
-
+#price {
+  font-size: 24px;
 }
