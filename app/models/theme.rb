@@ -8,4 +8,7 @@ class Theme < ApplicationRecord
   def price
     (price_cent/100.to_f).round(2)
   end
+
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 end
