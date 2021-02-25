@@ -4,7 +4,7 @@
     <p>to be added pundit condition for the following function</p>
     <% if current_user == @theme.user %>
       <%= link_to "Edit", edit_theme_path %>
-      <%= link_to "Delete", theme_path(@theme), method: :delete, data: { confirm: "Are you sure?"} %>
+      <%= link_to "Delete", theme_path(@theme, { redirect_to: themes_path }), method: :delete, data: { confirm: "Are you sure?"} %>
     <% end %>
   </div>
 
@@ -23,7 +23,7 @@
       <p><%= @theme.description %></p>
       <h5>Address:</h5>
       <p><%= @theme.address %></p>
-      <h5>Price: </h5><p><%= @theme.price_cent.to_f/100 %></p>
+      <h5>Price: </h5><p><%= number_to_currency(@theme.price) %></p>
       <h5>Contact: </h5>
       <p><%= @theme.user.email %></p>
     </div>
