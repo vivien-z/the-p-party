@@ -22,7 +22,7 @@ class ThemesController < ApplicationController
     if @theme.save
       redirect_to theme_path(@theme)
     else
-      render 'theme/new'
+      render 'new'
     end
   end
 
