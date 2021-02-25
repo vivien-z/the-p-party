@@ -1,13 +1,16 @@
 <div class="container m-5 ">
   <div class="row justify-content-center">
-    <%= simple_form_for(@theme) do |f| %>
-      <%= f.input :name %>
-      <%= f.input :description %>
-      <%= f.input :address %>
-      <%= f.input :price_cent %>
-      <%= f.input :number_people %>
-      <%= f.input :photos, as: :file, input_html: { multiple: true} %>
-      <%= f.button :submit, class: "btn btn-primary" %>
-    <% end %>
+    <div class="col-6">
+      <h3 class="mb-3">Add a theme</h3>
+      <%= simple_form_for(@theme) do |f| %>
+        <%= f.input :name %>
+        <%= f.input :description %>
+        <%= f.input :address %>
+        <%= f.input :price_cent, label: "Price / daily" %>
+        <%= f.input :number_people, label: "Number of people", input_html: { min: '0', step: '1' } %>
+        <%= f.input :photos, as: :file, input_html: { multiple: true} %>
+        <%= f.button :submit, class: "btn btn-primary" %>
+      <% end %>
+    </div>
   </div>
 </div>
