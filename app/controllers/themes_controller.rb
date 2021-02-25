@@ -25,6 +25,7 @@ class ThemesController < ApplicationController
   def create
     @theme = Theme.new(theme_params)
     @theme.user = current_user
+    @theme.price_cent = @theme.price_cent * 100
     authorize(@theme)
 
     if @theme.save
@@ -54,7 +55,8 @@ class ThemesController < ApplicationController
     @theme = Theme.find(params[:id])
     @theme.destroy
     authorize(@theme)
-    redirect_to themes_path
+    # redirect to the url provided in the query string (after || save from code break situation)
+    redirect_to params[:redirect_to] || themes_path
   end
 
   private

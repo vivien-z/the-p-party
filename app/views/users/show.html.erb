@@ -11,7 +11,8 @@
               <%= link_to "#{theme.name.capitalize}", theme_path(theme) %>
               <span class="ml-2">$ <%= theme.price %></span>
               <%= link_to "Edit", edit_theme_path %>
-              <%= link_to "Delete", theme_path(theme), method: :delete, data: { confirm: "Are you sure?"} %>
+              <%= link_to "Delete", theme_path(theme,{ redirect_to: user_path(current_user) }),
+                           method: :delete, data: { confirm: "Are you sure?"} %>
             </li>
           <% end %>
         </ul>
