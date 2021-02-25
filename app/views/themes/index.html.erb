@@ -1,19 +1,20 @@
-<div class="container">
+<div class="cards">
   <% @themes.each do |theme| %>
-    <div class="card-theme">
-      <% if theme.photos.attached? %>
-      <%= cl_image_tag theme.photos.first.key, height: 300, width: 400, crop: :fill %>
+    <div class="card-content">
+      <% if theme.photos.attached?%>
+       <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3),
+          rgba(0,0,0,0.3)), url('<%= cl_image_path theme.photos.first.key, height: 300, crop: :fill %>')">
       <% else  %>
         <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-      <% end %>
-
-      <div class="card-theme-infos">
-        <%= link_to "#{theme.name.capitalize}", theme_path(theme) %>
-        <p><%= theme.description %></p>
-        <p><%= theme.address %></p>
-        <p><%= theme.number_people %></p>
-        <p><%= theme.price %></p>
-       <span class="stars"><i class="fas fa-star"></i> <%= theme.rating %></span>
+      <% end %>      <%= link_to "#{theme.name.capitalize}", theme_path(theme) %>
+      </div>
+      <div class="card-info">
+        <p class="card-description"><%= theme.description %></p>
+        <p class="card-address"><%= theme.address %></p>
+        <div class="card-people-price">
+          <p class="card-people"><i class="fas fa-users"></i> <%= theme.number_people %></p>
+          <p class="card-price">$<%= theme.price %></p>
+        </div>
       </div>
     </div>
   <% end %>
@@ -21,18 +22,3 @@
 
 
 
-
-
-<div class="cards">
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-    Breakfast
-  </div>
-
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
-    Lunch
-  </div>
-
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
-    Dinner
-  </div>
-</div>

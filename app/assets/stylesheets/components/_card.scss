@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;700&display=swap');
 
 ul {
   list-style-type: none;
@@ -8,43 +9,146 @@ ul {
   color: #ef3054;
 }
 
-.card-theme {
-  overflow: hidden;
-  height: 120px;
-  background: white;
+// .card-theme {
+//   overflow: hidden;
+//   height: 120px;
+//   background: white;
+//   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+//   display: flex;
+//   align-items: center;
+// }
+
+// .card-theme img {
+//   height: 100%;
+//   width: 120px;
+//   object-fit: cover;
+// }
+
+// .card-theme h2 {
+//   font-size: 16px;
+//   font-weight: bold;
+//   margin: 0;
+// }
+
+// .card-theme p {
+//   font-size: 12px;
+//   line-height: 1.4;
+//   opacity: .7;
+//   margin-bottom: 0;
+//   margin-top: 8px;
+// }
+
+// .card-theme .card-theme-infos {
+//   padding: 16px;
+// }
+
+// .card-top {
+//   img{
+//     width: 100%;
+//   }
+// }
+
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.card-content{
+  border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border: 1px solid black;
+  position: relative;
+}
+
+.card-image {
+  background-size: cover;
+  background-position: center;
+  height: 180px;
   display: flex;
+  justify-content: center;
   align-items: center;
-}
-
-.card-theme img {
-  height: 100%;
-  width: 120px;
-  object-fit: cover;
-}
-
-.card-theme h2 {
-  font-size: 16px;
+  color: white;
+  font-size: 24px;
   font-weight: bold;
-  margin: 0;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-.card-theme p {
-  font-size: 12px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
+.card-people-price{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0px;
 }
 
-.card-theme .card-theme-infos {
-  padding: 16px;
-}
-
-.card-top {
-  img{
-    width: 100%;
+.card-info{
+  height: 100px;
+  padding-left: 10px;
+  padding-right: 10px;
+  .card-description{
+    line-height: 120%;
+    padding-top: 8px;
+    margin-bottom: 0px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
   }
-
-
+  .card-address{
+    margin-bottom: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 100;
+  }
+  .card-people{
+    position: absolute;
+    bottom: 5px;
+    margin-bottom: 0px;
+    font-weight: 700;
+  }
+  .card-price{
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 700 ;
+    margin-bottom: 0px;
+  }
 }
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
