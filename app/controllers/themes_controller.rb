@@ -1,6 +1,14 @@
 class ThemesController < ApplicationController
   def index
     @themes = policy_scope(Theme)
+
+    # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
+    @markers = @themes.geocoded.map do |theme|
+      {
+        lat: theme.latitude,
+        lng: theme.longitude
+      }
+    end
   end
 
   def show
@@ -22,7 +30,7 @@ class ThemesController < ApplicationController
     if @theme.save
       redirect_to theme_path(@theme)
     else
-      render 'theme/new'
+      render 'new'
     end
   end
 
