@@ -27,7 +27,6 @@
             <li>
               <%= booking.starting_date %>
               <%= booking.ending_date %>
-              <%= booking.address %>
               <%= link_to "Edit", edit_booking_path %>
               <%= link_to "Delete", theme_path(booking.theme), method: :delete, data: { confirm: "Are you sure?"} %>
               <!-- edit -->
