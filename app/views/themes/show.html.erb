@@ -53,11 +53,17 @@
 
   <div class="card card-list">
     <!-- new reviews to be added here-->
-    <% if @theme.bookings.include? (current_user.booking) %>
-      <%= simple_form_for([@theme, @review]) do |f| %>
+    <% if @most_recent_booking %>
+      <%= simple_form_for([@most_recent_booking, @review]) do |f| %>
         <%= f.input :content, as: :text %>
         <%= f.button :submit, "+", class: "btn btn-info" %>
       <% end %>
+    <% end %>
+    <div>
+      <% @theme.reviews.each do |review|  %>
+          <ul><li><%= review %></li></ul>
+      <% end %>
+    </div>
   </div>
 </div>
 

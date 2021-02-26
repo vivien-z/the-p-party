@@ -72,31 +72,31 @@ booking_5.save!
 
 #CREATING REVIEWS
 review_1 = Review.new(content: "All kids loved it. They all had tans of fun. Big thanks!!")
-review_1.theme = unicorn
+review_1.booking = booking_1
 review_1.save!
 
 review_2 = Review.new(content: "Big fun of all the ghost stories. That funcky mask really made my friends laugh~~")
-review_2.theme = halloween
+review_2.booking = booking_2
 review_2.save!
 
 review_3 = Review.new(content: "My girl really likes the set-up for her birthday. The photos are amazing!")
-review_3.theme = alice
+review_3.booking = booking_3
 review_3.save!
 
 review_4 = Review.new(content: "Intesting idea. Never thought these two food could go together")
-review_4.theme = cheesy_mango
+review_4.booking = booking_4
 review_4.save!
 
 review_5 = Review.new(content: "The party was cool~ It would be nice, if there were options for lactose free cheese.")
-review_5.theme = cheesy_mango
+review_5.booking = booking_4
 review_5.save!
 
 review_6 = Review.new(content: "Fun concept. Cool idea for company event.")
-review_6.theme = vikings
+review_6.booking = booking_5
 review_6.save!
 
 review_7 = Review.new(content: "Most amazing boat party I've ever had~~~~~ VIKING!")
-review_7.theme = vikings
+review_7.booking = booking_5
 review_7.save!
 
 puts "done seeding..."

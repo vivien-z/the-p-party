@@ -1,12 +1,12 @@
 class ReviewsController < ApplicationController
   def create
-    @theme = Theme.find(params[:theme_id])
+    @booking = Booking.find(params[:booking_id])
     @review = Review.new(review_params)
-    @review.theme = @theme
+    @review.booking = @booking
     authorize(@review)
 
     if @review.save
-      redirect_to theme_path(@theme)
+      redirect_to theme_path(@booking.theme)
     else
       render 'themes/show'
     end

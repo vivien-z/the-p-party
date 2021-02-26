@@ -19,6 +19,8 @@ class ThemesController < ApplicationController
     @theme = Theme.find(params[:id])
     @booking = Booking.new
     @review = Review.new
+    @most_recent_booking = @theme.bookings.where(user: current_user).order(:created_at).first
+
     authorize(@theme)
   end
 
