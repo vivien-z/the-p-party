@@ -18,6 +18,7 @@ class ThemesController < ApplicationController
   def show
     @theme = Theme.find(params[:id])
     @booking = Booking.new
+    @review = Review.new
     authorize(@theme)
   end
 
