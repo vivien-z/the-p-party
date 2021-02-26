@@ -5,10 +5,10 @@
     <% @themes.each do |theme| %>
       <div class="card-content">
         <% if theme.photos.attached?%>
-         <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3),
-            rgba(0,0,0,0.3)), url('<%= cl_image_path theme.photos.first.key, width: 200, crop: :fill %>')">
+         <div class="card-image" style="background-image: url('<%= cl_image_path theme.photos.first.key, width: 200, crop: :fill %>')">
         <% else  %>
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+         <div class="image-default" style="background-image: url('https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg')">
+          <!-- <div class="image-default"></div> -->
         <% end %>
         </div>
 
@@ -28,7 +28,7 @@
   </div>
 
   <div id="map"
-    style="width: 50vw; height: 100vh;"
+    style="width: 50vw; height: calc(100vh - 76px);"
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
