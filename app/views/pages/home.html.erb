@@ -1,7 +1,18 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)),
                            url('https://images.unsplash.com/photo-1496843916299-590492c751f4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80')">
-  <div class="banner-title">
+  <div class="banner-title ml-0 text-center">
     <h1>The <strong>P</strong> Party</h1>
-    <h3>A party a dream</h3>
+    <h3>Let's start the party</h3>
+  </div>
+  <div id="search-main">
+    <%= form_tag themes_path, method: :get, class: "d-flex justify-content-center" do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control form-control-lg w-50 mr-3",
+          placeholder: "Find an amazing party theme"
+        %>
+        <%= submit_tag "Search", class: "btn btn-warning" %>
+    <% end %>
   </div>
 </div>
+

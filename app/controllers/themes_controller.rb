@@ -1,7 +1,11 @@
 class ThemesController < ApplicationController
   def index
-    @themes = policy_scope(Theme)
-
+    # search condition
+    if params[:query].present?
+      @themes = policy_scope(Theme).search_by_theme_name(params[:query])
+    else
+      @themes = policy_scope(Theme)
+    end
     # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
     @markers = @themes.geocoded.map do |theme|
       {
