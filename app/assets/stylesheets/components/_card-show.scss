@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;700&display=swap');
+
+.card-image-show{
+  border-radius: 10px;
+  min-height: 400px;
+  width: 850px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 10px;
+  margin-bottom: 20px;
+}
+
+.card-content-show{
+  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-top: 20px;
+}
+
+.card {
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card-info-show{
+  margin-right: 10px;
+  border-top: 1px solid rgb(180, 180, 180);
+  padding-top: 20px;
+  position: relative;
+}
+
+.name-description{
+  margin-bottom: 20px;
+    h2{
+      font-family: 'Montserrat', sans-serif;
+      font-weight: bold;
+    }
+    p{
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 20px;
+    }
+}
+
+.price-address-email{
+  border-top: 1px solid rgb(180, 180, 180);
+  padding-top: 20px;
+    #price{
+      position: absolute;
+      right: 10px;
+      font-weight: 700;
+      font-size: 20px;
+
+    }
+    p{
+      font-family: 'Montserrat', sans-serif;
+
+    }
+}
+
+.top-right-button{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+    a{
+        color: black;
+        margin-left: 10px;
+        &:hover{
+          text-decoration: none;
+          font-weight: 700;
+        }
+    }
+}
+
+#lorem-ipsum{
+  padding-top: 20px;
+  border-top: 1px solid rgb(180, 180, 180);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  display: inline-block;
+
+}
