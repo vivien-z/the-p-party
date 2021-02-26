@@ -1,7 +1,7 @@
-<div class="container m-5 ">
+<div class="card container-edit m-5 col-8">
   <div class="row justify-content-center">
-    <div class="col-6">
-      <h1 class="mb-3">Edit: <%= @theme.name.capitalize %></h1>
+    <div class="col-8">
+      <h1 class="my-5 col-ms-12">Edit: <%= @theme.name.capitalize %></h1>
       <%= simple_form_for(@theme) do |f| %>
         <%= f.input :name %>
         <%= f.input :description %>
@@ -9,7 +9,7 @@
         <%= f.input :price_cent, label: "Price / daily" %>
         <%= f.input :number_people, label: "Number of people", input_html: { min: '0', step: '1' } %>
         <%= f.input :photos, as: :file, input_html: { multiple: true} %>
-        <%= f.button :submit, class: "btn btn-primary" %>
+        <%= f.button :submit, class: "btn btn-primary mb-5" %>
       <% end %>
     </div>
   </div>
