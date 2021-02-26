@@ -14,7 +14,7 @@ class Theme < ApplicationRecord
                   }
 
   def price
-    (price_cent / 10000.to_f).round(2)
+    ((price_cent * 100) / 100.to_f).round(2)
   end
 
   geocoded_by :address
