@@ -15,7 +15,7 @@
                 <div>
                   <!-- Romuald's card style -->
                   <%= link_to "#{theme.name.capitalize}", theme_path(theme) %>
-                  <span class="ml-2">$ <%= theme.price %></span>
+                  <span class="ml-2"><%= number_to_currency(theme.price) %></span>
                   <%= link_to "Edit", edit_theme_path(theme) %>
                   <%= link_to "Delete", theme_path(theme, { redirect_to: user_path(current_user) }),
                                method: :delete, data: { confirm: "Are you sure?"} %>
