@@ -1,15 +1,15 @@
-<div class="container m-5 ">
+<div class="container py-5 mt-3 card">
   <div class="row justify-content-center">
-    <div class="col-6">
+    <div class="col-8">
       <h3 class="mb-3">Add a theme</h3>
       <%= simple_form_for(@theme) do |f| %>
         <%= f.input :name %>
         <%= f.input :description %>
         <%= f.input :address %>
-        <%= f.input :price_cent, label: "Price / daily" %>
+        <%= f.input :price_cent, label: "Price $/daily" %>
         <%= f.input :number_people, label: "Number of people", input_html: { min: '0', step: '1' } %>
         <%= f.input :photos, as: :file, input_html: { multiple: true} %>
-        <%= f.button :submit, class: "btn btn-primary" %>
+        <%= f.button :submit, class: "btn btn-info mt-3 w-100" %>
       <% end %>
     </div>
   </div>
