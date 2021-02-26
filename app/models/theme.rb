@@ -6,6 +6,7 @@ class Theme < ApplicationRecord
   validates :price_cent, :name, :address, presence: true
   validates :number_people, :numericality => { :greater_than_or_equal_to => 0 }
 
+  default_scope {order("created_at DESC")}
   include PgSearch::Model
   pg_search_scope :search_by_theme_name,
                   against: [:name],
