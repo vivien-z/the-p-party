@@ -1,18 +1,26 @@
-<div class="container">
-  <h1>My Profile</h1>
-  <h3>User: <%= @user.email %></h3>
-
+<div class="container m-5 ">
+  <div class="row justify-content-left">
+    <div class="col-6">
+      <h3 class="mb-3">My Profile</h3>
+      <h5><%= @user.email %></h5>
+    </div>
+  </div>
   <div class="card-list">
     <h5>My themes</h5>
       <% if @user.themes %>
         <ul>
           <% @user.themes.each do |theme| %>
             <li>
-              <%= link_to "#{theme.name.capitalize}", theme_path(theme) %>
-              <span class="ml-2">$ <%= theme.price %></span>
-              <%= link_to "Edit", edit_theme_path %>
-              <%= link_to "Delete", theme_path(theme,{ redirect_to: user_path(current_user) }),
-                           method: :delete, data: { confirm: "Are you sure?"} %>
+              <div class="card flex-row">
+                <div>
+                  <!-- Romuald's card style -->
+                  <%= link_to "#{theme.name.capitalize}", theme_path(theme) %>
+                  <span class="ml-2">$ <%= theme.price %></span>
+                  <%= link_to "Edit", edit_theme_path(theme) %>
+                  <%= link_to "Delete", theme_path(theme, { redirect_to: user_path(current_user) }),
+                               method: :delete, data: { confirm: "Are you sure?"} %>
+                </div>
+              </div>
             </li>
           <% end %>
         </ul>
@@ -26,11 +34,15 @@
         <ul>
           <% @user.bookings.each do |booking| %>
             <li>
-              <%= booking.starting_date %>
-              <%= booking.ending_date %>
-              <%= booking.theme.address %>
-              <%= link_to "Edit", edit_booking_path %>
-              <%= link_to "Delete", theme_path(booking.theme), method: :delete, data: { confirm: "Are you sure?"} %>
+              <div class="card flex-row">
+                <div>
+                  <!-- Romuald's card style -->
+                  <p>From: <%= booking.starting_date %> - To: <%= booking.ending_date %></p>
+                  <p>Address: <%= booking.theme.address %></p>
+                  <p><%= link_to "Edit", edit_booking_path(booking) %></p>
+                  <p><%= link_to "Delete", booking_path(booking, { redirect_to: user_path(current_user) }), method: :delete, data: { confirm: "Are you sure?"} %></p>
+               </div>
+              </div>
             </li>
           <% end %>
         </ul>
