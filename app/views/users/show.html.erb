@@ -44,18 +44,18 @@
     <h5 class="btn-not-click">My bookings</h5>
       <% if @user.bookings %>
         <% @user.bookings.each do |booking| %>
-            <div class="card-content-booking">
-              <p><%= booking.theme.name %></p>
-              <p><%= booking.starting_date %> - <%= booking.ending_date %></p>
-              <p><%= booking.theme.address %></p>
-              <p class="card-description-profile">
-                <%= link_to "Edit", edit_booking_path(booking) %>
-              </p>
-              <p class="card-description-profile">
-                <%= link_to "Delete", booking_path(booking, { redirect_to: user_path(current_user) }),
-                  method: :delete, data: { confirm: "Are you sure?"} %>
-              </p>
-            </div>
+          <div class="card-content-booking">
+            <p><%= booking.theme.name %></p>
+            <p><%= booking.starting_date %> - <%= booking.ending_date %></p>
+            <p><%= booking.theme.address %></p>
+            <p class="card-description-profile">
+              <%= link_to "Edit", edit_booking_path(booking) %>
+            </p>
+            <p class="card-description-profile">
+              <%= link_to "Delete", booking_path(booking, { redirect_to: user_path(current_user) }),
+                method: :delete, data: { confirm: "Are you sure?"} %>
+            </p>
+          </div>
         <% end %>
       <% end %>
   </div>
