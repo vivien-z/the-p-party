@@ -6,6 +6,13 @@ class Theme < ApplicationRecord
   validates :price_cent, :name, :address, presence: true
   validates :number_people, :numericality => { :greater_than_or_equal_to => 0 }
 
+  include PgSearch::Model
+  pg_search_scope :search_by_theme_name,
+                  against: [:name],
+                  using: {
+                    tsearch: { prefix: true }
+                  }
+
   def price
     (price_cent / 10000.to_f).round(2)
   end
