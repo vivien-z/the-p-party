@@ -1,8 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;700&display=swap');
 
-ul {
+.container {
+background-color: white;
+border-radius: 4px;
+box-shadow: 0 0 15px rgba(0,0,0,0.2);
+padding: 10px;
+}
+
+.btn-not-click {
+  background-color: rgb(254, 249, 138);
+  background-size: 3px;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.list-profile m-3 {
+  padding: 10px;
+}
+
+.ul {
   list-style-type: none;
-  padding: 50px;
 }
 
 .stars {
@@ -12,12 +29,58 @@ ul {
   top: 10px;
 }
 
-// .cards {
-//   margin: 20px;
-//   display: grid;
-//   grid-template-columns: 1fr 1fr 1fr;
-//   grid-gap: 16px;
-// }
+.card-description-profile {
+  color: darkgray;
+  text-decoration: none;
+  margin: 3px;
+  font-size: 20px;
+}
+
+.card-description-profile:hover {
+  text-decoration: none;
+}
+
+.card-image.a {
+  color: red;
+}
+
+.card-content-booking {
+  color: black;
+  text-decoration: none;
+  margin: 5px;
+  font-size: 20px;
+  padding: 3px;
+}
+
+h3 {
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 7px;
+  border-radius: 5px;
+}
+
+h7 {
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 7px;
+  border-radius: 5px;
+}
+
+.card-content-booking {
+
+}
+
+
+h2 {
+  font-size: 20px;
+}
+/*.cards {*/
+  /*margin: 20px;*/
+  /*display: grid;*/
+  /*grid-template-columns: 1fr 1fr 1fr;*/
+  /*grid-gap: 16px;*/
+/*}*/
+
 .card {
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -30,11 +93,12 @@ ul {
 .card-content{
   padding-top: 20px;
   border-top: 1px solid rgb(180, 180, 180);;
-  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  /*box-shadow: 0 0 15px rgba(0,0,0,0.2);*/
   position: relative;
   display: flex;
   margin: 20px;
 }
+
 
 .card-image {
   border-radius: 5px;
@@ -42,7 +106,7 @@ ul {
   border-top-right-radius: 5px;
   background-size: cover;
   background-position: center;
-  // height: 180px;
+  height: 180px;
   width: 200px;
   display: flex;
   justify-content: center;
@@ -64,7 +128,10 @@ ul {
   height: 150px;
   padding-left: 10px;
   padding-right: 10px;
+}
+
   .card-description{
+    color: black;
     line-height: 120%;
     padding-top: 8px;
     margin-bottom: 5px;
@@ -95,7 +162,7 @@ ul {
     font-weight: 700 ;
     margin-bottom: 0px;
   }
-}
+
 
 .card-info{
   a{
@@ -111,37 +178,38 @@ ul {
   }
 }
 
-// // Smallest device
-// @media (min-width: 100px) and (max-width: 575px) {
-//   .cards {
-//     grid-template-columns: 1fr;
-//   }
-// }
+/*Smallest device*/
+/*@media (min-width: 100px) and (max-width: 575px) {*/
+  /*.cards {*/
+    /*grid-template-columns: 1fr;*/
+  /*}*/
+/*}*/
 
-// // Small devices (landscape phones, 576px and up)
-// @media (min-width: 576px) {
-//   .cards {
-//     grid-template-columns: 1fr;
-//   }
-// }
+/*Small devices (landscape phones, 576px and up)*/
+/*@media (min-width: 576px) {*/
+  /*.cards {*/
+    /*grid-template-columns: 1fr;*/
+  /*}*/
+/*}*/
 
-// // Medium devices (tablets, 768px and up)
-// @media (min-width: 768px) {
-//   .cards {
-//     grid-template-columns: 1fr 1fr;
-//   }
-// }
+/*Medium devices (tablets, 768px and up)*/
+/*@media (min-width: 768px) {*/
+  /*.cards {*/
+    /*grid-template-columns: 1fr 1fr;*/
+  /*}*/
+/*}*/
 
-// // Large devices (desktops, 992px and up)
-// @media (min-width: 992px) {
-//   .cards {
-//     grid-template-columns: 1fr 1fr 1fr;
-//   }
-// }
+/*Large devices (desktops, 992px and up)*/
+/*@media (min-width: 992px) {*/
+  /*.cards {*/
+    /*grid-template-columns: 1fr 1fr 1fr;*/
+  /*}*/
+/*}*/
 
-// // Extra large devices (large desktops, 1200px and up)
-// @media (min-width: 1200px) {
-//   .cards {
-//     grid-template-columns: 1fr 1fr 1fr;
-//   }
-// }
+/*Extra large devices (large desktops, 1200px and up)*/
+/*@media (min-width: 1200px) {*/
+  /*.cards {*/
+    /*grid-template-columns: 1fr 1fr 1fr;*/
+  /*}*/
+/*}*/
+
