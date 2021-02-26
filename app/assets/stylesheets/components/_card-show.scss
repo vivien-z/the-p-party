@@ -11,6 +11,18 @@
   margin-bottom: 20px;
 }
 
+.card-image-show-default{
+  object-fit: cover;
+  border-radius: 10px;
+  height: 400px;
+  width: 850px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 10px;
+  margin-bottom: 20px;
+}
+
 .card-content-show{
   // box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-top: 20px;

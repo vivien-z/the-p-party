@@ -56,6 +56,26 @@ ul {
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
+.image-default{
+  // background-image: url("https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg");
+  border-radius: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background-size: cover;
+  background-position: center;
+  // height: 180px;
+  width: 200px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
 .card-people-price{
   display: flex;
   justify-content: space-between;
