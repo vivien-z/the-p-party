@@ -7,49 +7,12 @@ ul {
 
 .stars {
   color: #ef3054;
+  position: absolute;
+  top: 10px;
 }
 
-// .card-theme {
-//   overflow: hidden;
-//   height: 120px;
-//   background: white;
-//   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-//   display: flex;
-//   align-items: center;
-// }
-
-// .card-theme img {
-//   height: 100%;
-//   width: 120px;
-//   object-fit: cover;
-// }
-
-// .card-theme h2 {
-//   font-size: 16px;
-//   font-weight: bold;
-//   margin: 0;
-// }
-
-// .card-theme p {
-//   font-size: 12px;
-//   line-height: 1.4;
-//   opacity: .7;
-//   margin-bottom: 0;
-//   margin-top: 8px;
-// }
-
-// .card-theme .card-theme-infos {
-//   padding: 16px;
-// }
-
-// .card-top {
-//   img{
-//     width: 100%;
-//   }
-// }
-
-
 .cards {
+  margin: 20px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
@@ -58,11 +21,12 @@ ul {
 .card-content{
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border: 1px solid black;
   position: relative;
 }
 
 .card-image {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   background-size: cover;
   background-position: center;
   height: 180px;
@@ -74,6 +38,17 @@ ul {
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    a{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    text-decoration: none;
+    color: white;
+    &:hover{
+      color: rgb(180, 180, 180);
+      text-decoration: none;
+    }
+  }
 }
 
 .card-people-price{
@@ -101,12 +76,14 @@ ul {
     font-weight: 100;
   }
   .card-people{
+    color: rgb(180, 180, 180);
     position: absolute;
     bottom: 5px;
     margin-bottom: 0px;
     font-weight: 700;
   }
   .card-price{
+    color: rgb(180, 180, 180);
     position: absolute;
     bottom: 5px;
     right: 10px;
