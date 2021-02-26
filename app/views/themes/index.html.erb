@@ -14,7 +14,7 @@
         <p class="card-address"><%= theme.address %></p>
         <div class="card-people-price">
           <p class="card-people"><i class="fas fa-users"></i> <%= theme.number_people %></p>
-          <p class="card-price">$<%= theme.price %></p>
+          <p class="card-price"><%= number_to_currency(theme.price) %></p>
           <span class="stars"><i class="fas fa-star"></i> <%= theme.rating %></span>
         </div>
       </div>
