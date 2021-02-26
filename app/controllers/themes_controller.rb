@@ -25,7 +25,6 @@ class ThemesController < ApplicationController
   def create
     @theme = Theme.new(theme_params)
     @theme.user = current_user
-    @theme.price_cent = @theme.price_cent * 100
     authorize(@theme)
 
     if @theme.save

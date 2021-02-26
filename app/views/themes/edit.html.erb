@@ -1,14 +1,16 @@
-<div class="container p-5 col-6">
-  <h1 class="mb-3">Edit: <%= @theme.name.capitalize %></h1>
-
-    <%= simple_form_for(@theme) do |f| %>
-      <%= f.input :name %>
-      <%= f.input :description %>
-      <%= f.input :address %>
-      <%= f.input :price_cent %>
-      <%= f.input :number_people %>
-      <%= f.input :photos, as: :file, input_html: { multiple: true} %>
-      <%= f.button :submit, class: "btn btn-primary" %>
-    <% end %>
-
+<div class="container m-5 ">
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <h1 class="mb-3">Edit: <%= @theme.name.capitalize %></h1>
+      <%= simple_form_for(@theme) do |f| %>
+        <%= f.input :name %>
+        <%= f.input :description %>
+        <%= f.input :address %>
+        <%= f.input :price_cent, label: "Price / daily" %>
+        <%= f.input :number_people, label: "Number of people", input_html: { min: '0', step: '1' } %>
+        <%= f.input :photos, as: :file, input_html: { multiple: true} %>
+        <%= f.button :submit, class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
 </div>
