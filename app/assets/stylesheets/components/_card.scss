@@ -18,10 +18,19 @@ ul {
 //   grid-template-columns: 1fr 1fr 1fr;
 //   grid-gap: 16px;
 // }
-
-.card-content{
+.card {
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  .card-left {
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  }
+}
+
+
+.card-content{
+  padding-top: 20px;
+  border-top: 1px solid rgb(180, 180, 180);;
+  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
   position: relative;
   display: flex;
   margin: 20px;
@@ -58,7 +67,7 @@ ul {
   .card-description{
     line-height: 120%;
     padding-top: 8px;
-    margin-bottom: 0px;
+    margin-bottom: 5px;
     font-family: 'Montserrat', sans-serif;
     font-size: 18px;
     font-weight: 300;
@@ -66,7 +75,7 @@ ul {
   .card-address{
     margin-bottom: 5px;
     font-family: 'Montserrat', sans-serif;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 100;
   }
   .card-people{
@@ -101,6 +110,7 @@ ul {
     }
   }
 }
+
 // // Smallest device
 // @media (min-width: 100px) and (max-width: 575px) {
 //   .cards {
