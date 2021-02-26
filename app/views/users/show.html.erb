@@ -1,23 +1,21 @@
-<div class="container m-3">
-<div class= "list-profile m-3">
-  <div class="row justify-content-left">
-    <div class="col-3">
-      <h3>My Profile</h3>
-      <h7><%= @user.email %></h7>
+<div class="container m-3 flex-column">
+
+  <div class= "list-profile m-3 flex-column">
+    <div class="row justify-content-left">
+      <div class="col-3">
+        <h4>My Profile</h4>
+        <h5><%= @user.email %></h5>
+      </div>
     </div>
   </div>
-</div>
-
-  <!-- <div class="card-info-profile"> -->
+    <!-- <div class="card-info-profile"> -->
+  <div>
     <h5 class="btn-not-click">My themes</h5>
       <% if @user.themes %>
         <div id="container m-3">
           <div class="cards">
-          <% @user.themes.each do |theme| %>
+            <% @user.themes.each do |theme| %>
                 <div class="card-content">
-
-
-
                   <% if theme.photos.attached?%>
                     <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3),
                       rgba(0,0,0,0.3)), url('<%= cl_image_path theme.photos.first.key, width: 200, crop: :fill %>')">
@@ -37,17 +35,15 @@
                       method: :delete, data: { confirm: "Are you sure?"}, class: 'card-description-profile' %>
                   </p>
                 </div>
-
-          <% end %>
+            <% end %>
           </div>
         </div>
       <% else %>
         <p>you have no themes</p>
       <% end %>
-
     <h5 class="btn-not-click">My bookings</h5>
       <% if @user.bookings %>
-          <% @user.bookings.each do |booking| %>
+        <% @user.bookings.each do |booking| %>
             <div class="card-content-booking">
               <p><%= booking.theme.name %></p>
               <p><%= booking.starting_date %> - <%= booking.ending_date %></p>
@@ -59,9 +55,8 @@
                 <%= link_to "Delete", booking_path(booking, { redirect_to: user_path(current_user) }),
                   method: :delete, data: { confirm: "Are you sure?"} %>
               </p>
-               </div>
-              </div>
-          <% end %>
+            </div>
+        <% end %>
       <% end %>
   </div>
 
