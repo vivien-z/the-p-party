@@ -1,30 +1,34 @@
-<div class="cards">
-  <% @themes.each do |theme| %>
-    <div class="card-content">
-      <% if theme.photos.attached?%>
-       <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3),
-          rgba(0,0,0,0.3)), url('<%= cl_image_path theme.photos.first.key, height: 300, crop: :fill %>')">
-      <% else  %>
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-      <% end %>
-      <%= link_to "#{theme.name.capitalize}", theme_path(theme) %>
-      </div>
-      <div class="card-info">
-        <p class="card-description"><%= theme.description %></p>
-        <p class="card-address"><%= theme.address %></p>
-        <div class="card-people-price">
-          <p class="card-people"><i class="fas fa-users"></i> <%= theme.number_people %></p>
-          <p class="card-price">$<%= theme.price %></p>
-          <span class="stars"><i class="fas fa-star"></i> <%= theme.rating %></span>
+<div id="container">
+
+  <div class="cards">
+    <% @themes.each do |theme| %>
+      <div class="card-content">
+        <% if theme.photos.attached?%>
+         <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3),
+            rgba(0,0,0,0.3)), url('<%= cl_image_path theme.photos.first.key, height: 300, crop: :fill %>')">
+        <% else  %>
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        <% end %>
+        <%= link_to "#{theme.name.capitalize}", theme_path(theme) %>
+        </div>
+        <div class="card-info">
+          <p class="card-description"><%= theme.description %></p>
+          <p class="card-address"><%= theme.address %></p>
+          <div class="card-people-price">
+            <p class="card-people"><i class="fas fa-users"></i> <%= theme.number_people %></p>
+            <p class="card-price">$<%= theme.price %></p>
+            <span class="stars"><i class="fas fa-star"></i> <%= theme.rating %></span>
+          </div>
         </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
+
+  <div id="map"
+    style="width: 50%; height: 100vh;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+
 </div>
-
-
-<div id="map"
-     style="width: 100%; height: 600px;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 
