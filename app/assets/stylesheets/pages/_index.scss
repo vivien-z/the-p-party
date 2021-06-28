@@ -5,6 +5,12 @@
   display: flex;
 }
 
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 #map{
   margin-top: 16px;
   position: sticky;
